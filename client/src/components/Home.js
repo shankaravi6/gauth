@@ -24,7 +24,7 @@ const Home = () => {
       try {
         const response = await axios.post(
           // "http://localhost:7878/send",
-          "https://gauth-server-u4ww.onrender.com",
+          "https://gauth-server-u4ww.onrender.com/send",
           sendData
         );
         console.log(response);
