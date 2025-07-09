@@ -45,7 +45,7 @@ const Home = () => {
   const handleSubmit = async () => {
     try {
       const res = await axios.post(
-        "https://gauth-server-u4ww.onrender.com/send",
+        "https://gauth-server-u4ww.onrender.com/api/send",
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
