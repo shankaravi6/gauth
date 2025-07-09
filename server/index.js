@@ -88,8 +88,8 @@ app.post("/api/send", verifyGoogleToken, async (req, res) => {
       address: "butcher.voughtprime@gmail.com",
     },
     to: userEmail,
-    subject: "Hello MF",
-    html: "<h2>Oi Cunt</h2>",
+    subject: "Oi Cunt",
+    html: "<h2>🖕( •_• )🖕</h2>",
   };
 
   try {
