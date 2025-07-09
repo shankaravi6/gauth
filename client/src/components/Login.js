@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
@@ -9,11 +9,13 @@ const Login = () => {
   const responseGoogle = (response) => {
     var decodedHeader = jwtDecode(response.credential);
     const { sub } = decodedHeader;
+
     //console.log("data", decodedHeader);
     if (sub !== null || sub !== "") {
+      localStorage.setItem("userdet", JSON.stringify(decodedHeader));
+      localStorage.setItem("google_id_token", response.credential);
       navigate("/Home");
     }
-    localStorage.setItem("userdet", JSON.stringify(decodedHeader));
   };
 
   function toggleFullScreen() {
